@@ -26,7 +26,7 @@ async def on_ready():
 
         while True:
             if not voice.is_playing():
-                source = discord.FFmpegPCMAudio(RADIO_URL, options='-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5 -filter:a "volume=0.5"')
+                source = discord.FFmpegPCMAudio(RADIO_URL, options='-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5 -filter:a "volume=0.3"')
                 voice.play(source)
             await asyncio.sleep(10)
 
