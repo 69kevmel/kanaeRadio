@@ -10,7 +10,7 @@ load_dotenv()
 TOKEN = os.getenv('TOKEN')
 GUILD_ID = int(os.getenv('GUILD_ID'))
 VOICE_CHANNEL_ID = int(os.getenv('VOICE_CHANNEL_ID'))
-RADIO_URL = os.getenv('RADIO_URL')
+RADIO_URL = "http://radiomeuh.ice.infomaniak.ch/radiomeuh-128.mp3" 
 
 intents = discord.Intents.default()
 intents.voice_states = True
