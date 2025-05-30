@@ -1,2 +1,3 @@
-discord.py
-feedparser
+discord.py[voice]
+PyNaCl
+python-dotenv
