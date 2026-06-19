@@ -104,14 +104,16 @@ async def play_radio(vc):
             if len(members) != last_member_count:
                 log_success(f"{len(members)} utilisateur(s) connecté(s)")
                 last_member_count = len(members)
-                last_activity_time = now
+            
+            # Toujours réinitialiser le timer s'il y a des utilisateurs
+            last_activity_time = now
 
             # Lancer la radio si elle n'est pas en cours
             if not vc.is_playing():
                 try:
                     source = discord.FFmpegPCMAudio(
                         RADIO_URL,
-                        options='-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5 -filter:a "volume=0.3"'
+                        options='-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5 -filter:a "volume=0.5"'
                     )
                     vc.play(source)
                     log_success("Radio en lecture")
